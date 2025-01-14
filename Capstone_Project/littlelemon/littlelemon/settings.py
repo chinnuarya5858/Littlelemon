@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'resturant',
     'rest_framework',
+    'rest_framework.authtoken',
+    'djoser',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +135,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS=[
     'resturant/static',
 ]
+
+REST_FRAMEWORK={
+    'DEFAULT_AUTHENTICATION CLASSES':(
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+
+
+    )
+}
+
+DJOSER={
+    "USER_ID_FIELD":"username"
+}

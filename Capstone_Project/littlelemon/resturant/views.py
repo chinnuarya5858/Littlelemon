@@ -6,9 +6,11 @@ from rest_framework.generics import ListCreateAPIView
 from rest_framework.generics import RetrieveUpdateAPIView
 from rest_framework.generics import DestroyAPIView 
 from rest_framework import viewsets 
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 class MenuView(ListCreateAPIView):
+    permission_classes=[IsAuthenticated]
     queryset=Menu.objects.all()
     serializer_class=MenuSerializer
 
